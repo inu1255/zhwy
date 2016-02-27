@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>中海微信后台管理</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<script src="../js/angular/angular.min.js"></script>
+<script src="../js/md5.js"></script>
+<style>
+</style>
+
+<body ng-app="Main" ng-controller="index">
+	<div class="aside">
+		<div class="brand">中海物业</div>
+		<ul class="y-list">
+			<li ng-repeat="m in models" ng-click="$parent.s.model = $index" ng-class="{'active':$index==$parent.s.model}" class="y-list-item"><a class="fa fa-angle-double-down"></a>{{m.name}}</li>
+		</ul>
+	</div>
+	<div>
+		<nav class="navbar navbar-default" style="border-radius: 0;" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">中海物业</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><label style="cursor: pointer;padding: 15px;">
+						<input type="checkbox" ng-checked="hideNoEdit" ng-model="hideNoEdit">编辑时隐藏不能编辑的项目
+					</label></li>
+					<li><a ng-click="reload()" style="cursor: pointer;">刷新数据</a></li>
+					<li><label style="cursor: pointer;padding: 15px;">
+						<input type="checkbox" ng-checked="autoReload" ng-model="autoReload">切换时刷新数据
+					</label></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Link</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container" style="width: 100%;">
+			<h3 style="margin-top: 0;">{{model.name}}</h3>
+			<div class="row" style="margin: 0;">
+				<button ng-click="edit()" ng-if="!model.option.noadd" class="btn btn-primary" style="float: left;">新增</button>
+				<button ng-click="del()" ng-if="!model.option.nodel" class="btn btn-danger" style="float: left;">删除</button>
+				<div ng-if="model.option._st" style="float: right;">
+					<label ng-repeat="s in model.option._st" style="margin-left: 14px;"><input type="checkbox" ng-model="model.option._st[$index].value" ng-checked="model.option._st[$index].value" />{{s.label}}</label>
+				</div>
+				<div ng-if="model.option.search" style="float: right;">
+					用户名：
+					<input type="text" />
+					<button class="btn btn-success">搜索</button>
+				</div>
+			</div>
+			<table class="table table-striped table-hover" style="margin-top: 10px;border-top: 3px solid;">
+				<tr>
+					<th ng-if="!model.option.nodel"><input ng-click="checkall($event)" ng-checked="allchecked()" type="checkbox"></th>
+					<th ng-repeat="label in model.option.label" ng-click="order(label.label)">{{label.name}}</th>
+					<th ng-if="model.option.edit">操作</th>
+				</tr>
+				<tr ng-repeat="s in model.data|filter:model.option.filter|orderBy:model.option.order">
+					<td ng-if="!model.option.nodel"><input ng-checked="s._checked" ng-model="s._checked" type="checkbox"></td>
+					<td ng-repeat="label in model.option.label" ng-click="s._checked=!s._checked" ng-bind-html="label.value?label.value(s[label.label],s):s[label.label]|to_trusted"></td>
+					<td ng-if="model.option.edit"><button ng-click="edit(s)" class="btn btn-purple">编辑</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-show="mask" class="mask ng-hide">
+		<div class="form">
+			<a ng-click="mask=false" style="float: right;margin-right: -24px;margin-top: -7px;margin-bottom: 10px;cursor: pointer;">关闭</a>
+			<table class="table table-bordered"><tbody id="editTable"></tbody></table>
+			<button ng-click="save()" class="btn btn-primary" style="float: right;">保存</button>
+		</div>
+	</div>
+</body>
+<script src="../js/yasha.js"></script>
+<script src="../js/ta.js"></script>

@@ -1,0 +1,53 @@
+<div style="max-width: 1024px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation"><a href="#/main">服务管理</a></li>
+		<li role="presentation"><a href="#/order">订单管理</a></li>
+		<li role="presentation" class="active"><a href="#/company">公司管理</a></li>
+		<li role="presentation"><a href="#/user">用户管理</a></li>
+		<li role="presentation"><a href="#/manager">经理凭证</a></li>
+	</ul>
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>名称</th>
+			<th>地址</th>
+			<th>积分</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="s in data">
+			<td>
+				<div>{{$index+1}}</div>
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.name}}</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.name" type="text" style="display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.address}}</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.address" type="text" style="display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.score}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.score" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>
+				<button ng-click="del($event,s)" class="btn btn-danger">删除</button>
+			</td>
+		</tr>
+		<tr>
+			<td>添加</td>
+			<td>
+				<input ng-model="s.name" type="text">
+			</td>
+			<td>
+				<input ng-model="s.address" type="text">
+			</td>
+			<td>
+				<input ng-model="s.score" type="text" style="width: 60px;">
+			</td>
+			<td>
+				<button ng-disabled="checkadd()" ng-click="insert($event)" class="btn btn-primary">保存</button>
+			</td>
+		</tr>
+	</table>
+</div>

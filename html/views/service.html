@@ -1,0 +1,57 @@
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell description">
+				<img ng-src="{{s.img?s.img:'../img/codebar.png'}}" class="main-img" />
+				<div class="service-main">{{s.name}}</div>
+				{{s.description}}
+				<div class="main-info main-price">{{s.price}}{{s.type==2?"积分":"元"}}/{{s.unit}}{{s.type==3?"(100积分抵1元)":""}}
+					<div style="float: right;color: #ccc;font-size: 12px;margin-right: 5px;">公:{{s.cscore}}分</div>
+					<div ng-show="$parent.user.type>0" style="float: right;color: #ccc;font-size: 12px;">私:{{s.cscore}}分</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">请填写信息</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row">
+					<label>公司</label>
+					<select ng-disabled="$parent.user.type>0" ng-model="user.cid" ng-options="c.id as c.name for c in company">
+					</select>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row">
+					<label>姓名</label>
+					<input ng-model="user.name" type="text" placeholder="如：张三" />
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row">
+					<label>电话</label>
+					<input ng-model="user.telphone" type="text" placeholder="我们将尽快联系您" />
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row">
+					<label>数量</label>
+					<input ng-model="num" type="number"/>
+				</div>
+			</li>
+			<li ng-if="s.type>1" class="mui-table-view-cell">
+				<div class="mui-input-row">
+					<label>积分</label>
+					<select ng-model="order.type">
+						<option ng-if="s.type==3" value="0">不使用积分</option>
+						<option value="1">使用个人积分</option>
+						<option value="2">使用公司积分</option>
+					</select>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<textarea ng-model="user.remark" rows="3" placeholder="有无地址、时间要求等"></textarea>
+			</li>
+			<li class="mui-table-view-cell">
+				<button ng-click="Order(s)" ng-disabled="check()" class="mui-btn mui-btn-primary" style="border-radius: 7px;width: 100%;font-size: 20px;margin-top: 10px;margin-bottom: -11px;position: initial;">预定</button>
+			</li>
+		</ul>
+	</div>
+</div>

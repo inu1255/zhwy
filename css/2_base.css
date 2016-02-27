@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*css reset star*/
+html								{color:#666;background:#FFF;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,
+dl,dt,dd,ul,ol,li,pre,form,fieldset,
+legend,button,input,textarea,th,td	{margin:0;padding:0;}
+body,button,input,select,textarea	{font:12px/1.5 arial, \5b8b\4f53;}
+h1,h2,h3,h4,h5,h6					{font-size:100%;}
+address,cite,dfn,em,var				{font-style:normal;}
+code,kbd,pre,samp					{font-family:courier new, courier, monospace;}
+small								{font-size:12px;}
+ul,ol								{list-style:none;}
+/*a									{text-decoration:none;}
+a:hover								{text-decoration:underline;}*/
+sup									{vertical-align:text-top;}
+sub									{vertical-align:text-bottom;}
+legend								{color:#000;}
+fieldset,
+img									{border:0;}
+button,
+input,
+select,
+textarea							{font-size:100%;}
+table								{border-collapse:collapse; border-spacing:0;}
+a									{text-decoration:none;color:#666;}
+a:hover, a:focus					{text-decoration:none;color:#390;}
+
+strong								{font-weight:bold;}
+input[type=submit]					{cursor:pointer;}
+button								{cursor:pointer;}
+*:focus								{outline:none; }
+/*css reset end*/
+
+.hr 								{font-size:1px;line-height:1px;clear:both;height:10px;}/*留出10像素的间隙*/
+.clear								{clear:both;font-size:0px; height:0px; line-height:0px;}/*清楚ie6 浮动造成的重复文字*/
+.m									{margin:0 auto;}
+.b									{font-weight:bold;}
+span.none-b							{font-weight:normal;}
+.pos-rel							{position:relative;}
+.w960								{width:960px;}
+.border_none						{border:none;}
+.display_none						{display:none;}
+/*f_开头为float漂浮,l:左 r:右*/
+.fl									{float:left;}
+.fr									{float:right;}
+
+/*m_开头位margin边距,t:上 b:下 l:左 r:右*/
+.m50                                {margin:50px;}
+.mt									{margin-top:10px;}
+.mt5								{margin-top:5px;}
+.mt15								{margin-top:15px;}
+.mb									{margin-bottom:10px;}
+.mb5								{margin-bottom:5px;}
+.ml									{margin-left:10px;}
+.mr									{margin-right:10px;}
+.mr20								{margin-right:20px;}
+.mr50								{margin-right:50px;}
+.mr15								{margin-right:15px;}
+.mr30								{margin-right:30px;}
+.mr5								{margin-right:5px;}
+.mb2								{margin-bottom:2px;}
+.mb20								{margin-bottom:20px;}
+.mb15								{margin-bottom:15px;}
+.mt1								{margin-top:-1px;}
+.ml5								{margin-left:5px;}
+
+
+.pa5								{padding:5px;}
+.pa10								{padding:10px;}
+.pa20								{padding:20px;}
+.pa15								{padding:15px;}
+.pa8								{padding:8px;}
+.page_pa40							{padding:40px 0 40px 0;}
+/*c_开头为字体颜色*/
+.gray3								{color:#333;}
+.gray6								{color:#666;}
+.gray9								{color:#999;}
+.gray_a								{color:#a4aeb9;}
+
+.blue								{color:#2c7ac3;}
+.red								{color:#bf0000;}
+.green								{color:#390;}
+.orange								{color:#f95e1c;}
+a.uline								{text-decoration:underline;}
+
+.clearfix:after						{ content:"."; height:0; visibility:hidden; display:block; clear:both; }
+.clearfix							{ display:inline-block; }
+.clearfix							{ display:block; }
+/*w_开头表示宽度,bdr_为对边框的设置,这两个组合使用*/
+.w770								{width:770px;}
+.w680								{width:680px;}
+.w670								{width:670px;}
+.w560								{width:560px;}
+.w500								{width:500px;}
+.w260								{width:260px;}
+.w270								{width:270px;}
+.w720								{width:720px;}
+.w700								{width:700px;}
+.w510								{width:510px;}
+.w270								{width:270px;background:#FFF;}
+.w250								{width:250px;}
+.w230								{width:230px;}
+.w210								{width:210px;}
+.w200								{width:200px;}
+.w190								{width:190px;}
+.w180								{width:180px;}
+
+
+.box680								{width:680px;}
+.box270								{width:270px;}
+
+
+
+/*fh_开头的是行距*/
+.fh18								{line-height:18px;}
+.fh21								{line-height:21px;}
+.fh30								{line-height:30px;}
+/*fs_开头的是字体大小*/
+.fs12								{font-size:12px;}
+.fs14								{font-size:14px;}
+/*v开头表示垂直对齐方式，t开头横向对齐方式，组合使用*/
+.vt									{vertical-align:top;}
+.vm									{vertical-align:middle;}
+.tc									{text-align:center;}
+.tr									{text-align:left;font-size:14px;margin-bottom:10px;margin-left:15px;}
+.wp									{word-wrap:break-word;word-break:normal;}/*字符串不换行*/
+
+/*最小高度*/
+.mh600								{min-height:600px;height:auto !important;height:600px;overflow:visible;}
+.bk									{display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:top;}
+
+/*图片隐藏*/
+.img-h								{display:block;overflow:hidden;text-align:center;}
+.img-box							{display:block;}
+
+/*按钮样式集*/
+.submit_style1,
+.submit_style2,
+.submit_style3,
+.submit_style4,
+.submit_style5,
+.submit_style6,
+.submit_style7						{display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:top;font-size:12px;text-align:center;border:none;color:#FFF; cursor:pointer;}
+
+.submit_style1						{background:url(1_icon_all.png) no-repeat -210px 0;width:100px;height:36px;line-height:36px;}
+.submit_style1:hover				{color:#FF0; text-decoration:none;}
+
+
+.submit_style2						{background:url(1_icon_all.png) no-repeat -210px -40px;width:90px;height:30px;line-height:30px;}
+.submit_style2:hover				{color:#FF0;text-decoration:none;}
+
+.submit_style3						{background:url(1_icon_all.png) no-repeat -210px -160px;width:140px;height:36px;line-height:36px;color:#390;}
+.submit_style3:hover				{color:#390;text-decoration:none;}
+
+.submit_style4						{background:url(1_icon_all.png) no-repeat -210px -200px;width:100px;height:36px;line-height:36px;color:#390;}
+.submit_style4:hover				{color:#390;text-decoration:none;}
+
+.submit_style5						{background:url(1_icon_all.png) no-repeat -210px -360px;width:90px;height:30px;line-height:30px;color:#390;}
+.submit_style5:hover				{color:#390;text-decoration:none;}
+
+.submit_style6						{background:url(1_icon_all.png) no-repeat -210px -400px;width:130px;height:30px;line-height:30px;color:#FFF;}
+.submit_style6:hover				{color:#FF0;text-decoration:none;}
+
+.submit_style7						{background:url(1_icon_all.png) no-repeat 0 -360px;width:138px;height:40px;line-height:40px;color:#FFF;font-size:14px;font-weight:bold;}
+.submit_style7:hover				{color:#FF0;text-decoration:none;}
+
+/*图标集合*/
+.ihot1,.ihot2,.inew,.iplace,.iname,.iv,.istar,.ifav,.i_youhui,.i_yuyue,.i_zaizhi,
+.i_shenfen,.i_shi,.i_xue,.i_gong,.i_4,.i_6,.i_8,.i_ben,.i_yan,
+.i_jingyan1,.i_jingyan2,.i_xin,.i_phone,.i_email,.i_jiucuo,.i_share,.i_top,
+.renzheng-1,.renzheng-2,.renzheng-3,.renzheng-4,.renzheng-5,.renzheng-6,.renzheng-7,.renzheng-8,.renzheng-9,.renzheng-10,.renzheng-11{display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:middle;width:12px;height:13px;line-height:200px;overflow:hidden;background:url(1_icon_all.png) no-repeat;}
+.ihot1								{background-position:-359px -80px;}
+.ihot2								{background-position:-381px -80px;}
+.inew								{background-position:-403px -80px;}
+.iplace								{background-position:-425px -80px;width:12px;height:16px;}
+.iname								{background-position:-445px -80px;width:14px;height:16px;}
+.iv									{background-position:-470px -80px;width:12px;height:16px;}
+.istar								{background-position:-490px -80px;width:13px;height:16px;}
+.ifav								{background-position:0 -80px;width:13px;height:12px;}
+.i_youhui							{background-position:-210px -440px;width:34px;height:17px;}
+.i_yuyue							{background-position:-264px -440px;width:46px;height:17px;}
+.i_zaizhi							{background-position:-330px -440px;width:58px;height:17px;}
+.i_shenfen							{background-position:-295px -480px;width:23px;height:18px;}
+.i_shi								{background-position:-210px -480px;width:18px;height:18px;}
+.i_xue								{background-position:-239px -480px;width:18px;height:18px;}
+.i_gong								{background-position:-267px -480px;width:18px;height:18px;}
+.i_4								{background-position:-404px -480px;width:13px;height:18px;}
+.i_6								{background-position:-428px -480px;width:13px;height:18px;}
+.i_8								{background-position:-452px -480px;width:15px;height:18px;}
+.i_ben								{background-position:-328px -480px;width:14px;height:18px;}
+.i_yan								{background-position:-352px -480px;width:14px;height:18px;}
+.i_jingyan1							{background-position:-478px -480px;width:15px;height:18px;}
+.i_jingyan2							{background-position:-503px -480px;width:15px;height:18px;}
+.i_xin								{background-position:-376px -480px;width:19px;height:18px;}
+.i_phone							{background-position:-528px -480px;width:13px;height:18px;}
+.i_email							{background-position:-550px -480px;width:21px;height:18px;}
+.i_jiucuo							{background-position:-210px -520px;width:16px;height:18px;}
+.i_share							{background-position:-236px -520px;width:16px;height:18px;}
+.i_top								{background-position:-100px -280px;width:27px;height:47px;}
+
+.renzheng-9						{background-position:-295px -480px;width:23px;height:18px;}
+.renzheng-10					{background-position:-295px -480px;width:23px;height:18px;}
+.renzheng-4						{background-position:-295px -480px;width:23px;height:18px;}
+.renzheng-1								{background-position:-210px -480px;width:18px;height:18px;}
+.renzheng-2								{background-position:-239px -480px;width:18px;height:18px;}
+.renzheng-3								{background-position:-267px -480px;width:18px;height:18px;}
+.renzheng-7								{background-position:-404px -480px;width:13px;height:18px;}
+.renzheng-8									{background-position:-428px -480px;width:13px;height:18px;}
+.renzheng-6									{background-position:-452px -480px;width:15px;height:18px;}
+.renzheng-5							{background-position:-328px -480px;width:14px;height:18px;}
+.renzheng-11							{background-position:-352px -480px;width:14px;height:18px;}
+.i_orange,.i_orange span,
+.i_blue,.i_blue span,
+.i_green,.i_green span				{display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:middle;height:17px;line-height:15px;line-height:18px\9;*line-height:17px;overflow:hidden;background:#FFF url(1_icon_all.png) no-repeat;color:#FFF;}
+
+.i_orange span,.i_blue span,.i_green span{float:left;}
+
+
+.i_orange							{background-position:-400px -720px;padding-left:6px;}
+.i_orange span						{background-position:right -720px;padding-right:6px;}
+
+.i_blue								{background-position:-400px -680px;padding-left:6px;}
+.i_blue span						{background-position:right -680px;padding-right:6px;}
+
+.i_green							{background-position:-400px -640px;padding-left:6px;}
+.i_green span						{background-position:right -640px;padding-right:6px;}
+
+.ft-nav {
+    border-top: 1px #D5D5D5 solid;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#F0F0F0),to(#FFF))
+}
+
+.ft-nav>ul {
+    font-size: 0;
+    text-align: center;
+    height: 35px;
+    overflow: hidden;
+    border-top: 1px #FFF solid
+}
+
+.ft-nav li {
+    float: left;
+    width: 50%;
+    font-size: 12px;
+    line-height: 36px;
+    position: relative
+}
+
+.ft-nav a {
+    display: block
+}
+
+.ft-nav a:after {
+    content: '-';
+    height: 28px;
+    width: 1px;
+    background: #CCC;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    font-size: 0;
+    text-indent: -9999px;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#FFF),to(#FFF),color-stop(0.5,#CCC))
+}
+
+.ft-nav li:last-child a:after {
+    width: 0
+}
+
+.ft-copyright {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    height: 30px
+}
+
+.ft-copyright-text {
+    line-height: 23px;
+    background: #FFF;
+    padding: 0 6px;
+    position: relative;
+    top: -11px
+}
+
+.ft-copyright-text>a {
+    color: #999
+}
+
+.ft-copyright:before {
+    display: block;
+    content: "";
+    background-image: -webkit-gradient(radial,center center,0,center center,460,from(#b4b4b4),to(#efefef));
+    background-image: -webkit-radial-gradient(circle,#b4b4b4,#efefef);
+    background-image: -webkit-radial-gradient(circle, #b4b4b4, #efefef);
+    background-image: radial-gradient(circle,#b4b4b4,#efefef);
+    background-repeat: no-repeat;
+    height: 1px;
+    overflow: hidden;
+    margin-top: 12px
+}
+
+.ft-wrap {
+    height: 48px;
+    width: 100%;
+    border-top: 1px solid #D5D5D5
+}
+
+.ft-wrap>div {
+    line-height: 48px
+}
+
+.ft-user {
+    float: left;
+    padding: 0 0 0 10px
+}
+
+.ft-city {
+    float: right;
+    padding: 0 10px 0 0
+}
+
+.ft-user-exit {
+    margin: 0 0 0 8px
+}
+
+.ft-city-change {
+    padding: 0 0 0 14px;
+    margin: 0 0 0 6px
+}
+
+.ft-quick-login {
+    line-height: 48px;
+    padding-left: 10px;
+    text-align: left
+}
+
+.ft-quick-login a {
+    font-size: 16px
+}
+
+.ft-account {
+    float: left;
+    padding: 0 0 0 10px
+}
+
+.pageinator {
+height: 48px;
+position: relative;
+padding: 0 8px;
+background: #f8f8f8;
+border-top: 1px solid #EFEFEF;
+border-bottom: 1px solid #FFF;
+}
+.pg-next,.pg-top {
+    display: inline-block;
+    line-height: 48px
+}
+
+.pg-next {
+    float: left
+}
+
+.pg-next>span {
+    margin-right: 10px
+}
+
+.pg-top {
+    float: right
+}

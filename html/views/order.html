@@ -1,0 +1,37 @@
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<div class="info-header">
+			<div style="overflow: hidden;">
+				<div class="info-header-imgbox"><img ng-src="{{user.headimgurl}}"></div>
+				<div class="info-text-box">
+					<div style="font-size: 24px;margin-top: 8px;">{{user.nickname}}</small></div>
+					<div ng-show="user.cid>0" style="color: #777;margin-top: 8px;">{{C(user.cid).name}}<small>{{C(user.cid).score}}积分</small></div>
+					<div style="color: #000;margin-top: 8px;font-size: 14px;">
+						<div ng-show="user.type>0" class="yasha-fl" style="margin-right: 5px;">个人:<small>{{user.score}}积分</small></div>
+					</div>
+				</div>
+			</div>
+			<div i-row-bottoms="未结算 已结算" model="st"></div>
+		</div>
+		<ul class="mui-table-view">
+			<li ng-repeat="s in data|filter:statusFilter|orderBy:'-time'" class="mui-table-view-cell">
+				<div class="mui-slider-right">
+					<a ng-tap="delete(s)" class="mui-btn mui-btn-red">取消订单</a>
+				</div>
+				<div class="mui-slider-handle">
+				<img ng-src="{{s.img?s.img:'../img/codebar.png'}}" class="main-img" />
+					<div class="main-info">
+						<div>{{s.name}}
+							<span class="mui-badge yasha-fr" ng-class="{'mui-badge-danger':s.status==3,'mui-badge-success':s.status==0,'mui-badge-warning':s.status==1,'mui-badge-info':s.status==2}">{{ST(s.status)}}</span>
+						</div>
+						<h5 class="mui-ellipsis">{{s.description}}</h5>
+						<div class="main-price">{{P(s)}}
+							<div style="float: right;color: #ccc;font-size: 12px;margin-right: 5px;">公:{{s.cscore}}分</div>
+							<div ng-show="$parent.user.type>0" style="float: right;color: #ccc;font-size: 12px;">私:{{s.cscore}}分</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

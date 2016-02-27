@@ -1,0 +1,45 @@
+<div style="max-width: 1024px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation"><a href="#/main">服务管理</a></li>
+		<li role="presentation"><a href="#/order">订单管理</a></li>
+		<li role="presentation"><a href="#/company">公司管理</a></li>
+		<li role="presentation" class="active"><a href="#/user">用户管理</a></li>
+		<li role="presentation"><a href="#/manager">经理凭证</a></li>
+	</ul>
+	<table class="table table-bordered">
+		<tr>
+			<th style="width: 35px;">#</th>
+			<th style="width: 70px;">头像</th>
+			<th style="width: 70px;">昵称</th>
+			<th style="width: 70px;">姓名</th>
+			<th style="width: 70px;">电话</th>
+			<th style="width: 70px;">性别</th>
+			<th class="editable" style="width: 100px;">公司</th>
+			<th class="editable" style="width: 70px;">职位</th>
+			<th class="editable" style="width: 70px;">积分</th>
+		</tr>
+		<tr ng-repeat="s in data">
+			<td>
+				<div>{{$index+1}}</div>
+			</td>
+			<td><img ng-src="{{s.headimgurl}}" err-src="../img/codebar.png" style="width: 40px;height: 40px;" />
+			</td>
+			<td>{{s.nickname}}</td>
+			<td>{{s.name}}</td>
+			<td>{{s.telphone}}</td>
+			<td ng-class="{'text-danger':s.sex==2,'text-primary':s.sex==1,'text-muted':s.sex==0}">{{s.sex==0?"未知":s.sex==1?"男":"女"}}</td>
+			<td>
+				<div ng-click="edit($event,s)" ng-class="{'yasha-grey':s.cid<1}">{{getCompanyById(s.cid).name}}</div>
+				<select ng-blur="save($event,s)" ng-onchange="save($event,s)" ng-model="$parent.v.cid" ng-options="c.id as c.name for c in $parent.company" style="display: none;">
+				</select>
+			</td>
+			<td>
+				<button ng-click="updatestatus($event,s,'type')" ng-class="{'btn-default':0==s.type,'btn-primary':0!=s.type}" class="btn">{{s.type!=0?'经理':'员工'}}</button>
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.score}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.score" type="text" style="width: 60px;display: none;">
+			</td>
+		</tr>
+	</table>
+</div>

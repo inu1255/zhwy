@@ -1,0 +1,128 @@
+header {
+margin: 0px;
+position: relative;
+color: #FFF;
+height: 50px;
+text-align: center;
+border-bottom: 1px solid #879285;
+background-color: #70C76C;
+}
+header h1 {
+font: 700 20px/50px Arial;
+text-shadow: 0 1px 1px #30C459;
+}
+.left-box,.right-box {
+    position: absolute;
+    top: 10px
+}
+
+.right-box {
+    right: 8px
+}
+
+.left-box {
+    left: 8px
+}
+
+.info {
+	background: #EFEFEF;
+	overflow: hidden;
+	min-height: 200px;
+	width:100%;
+}
+
+/*.account*/
+.account {
+background: #FFF;
+margin: 0 auto;
+height: 60px;
+background-color: #dfc8b4;
+}
+.account .username {font: 16px Arial,Helvetica,sans-serif;color: #333;}
+.account .remain{font: 12px Arial,Helvetica,sans-serif;color: #666;}
+.account img {margin: 0px;height: 60px;}
+
+.info .tith{background: #FFF;margin: 0 auto;text-align: center;padding: 10px;}
+.tith .img-wrap {margin-bottom: 15px;}
+.tith-info {
+	width: 50%;
+	display: inline-block;
+}
+.tith .btn {
+	-webkit-box-flex: 1;
+	width: 40%;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	display: inline-block;
+    font-size: 14px;
+}
+.tith .box {border-top: 1px dashed #ccc;text-align: left;padding: 10px;margin: 10px;}
+
+/*box_ui_sy1*/
+.box_ui_sy1,.detail{
+    background: #FFF;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    margin: 13px;
+    padding: 8px 7px;
+}
+.box_ui_sy1 ul li {
+    border-bottom: 1px dashed #E5E5E5;
+    padding: 10px 5px;
+    font-size: 14px;
+}
+.box_ui_sy1 a {
+    display: block;
+}
+
+/*detail_info*/
+.info .detail_info     {border-top: 1px dashed rgba(0,0,0,.1);}
+.info .detail_info .bt,
+.info .detail_info .nr {display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:top;line-height:30px;}
+
+.info .detail_info .bt {width:20%;padding-left:20px;font-weight:normal;color:#a4aeb9;}
+.info .detail_info .nr {width:70%;}
+.msgbox          {border:1px solid #e5e6ea;background:#fefff0;padding:5px 0;}
+.msgbox .tips    {padding-left:20px;}
+.msgbox .tips p  {font-size:12px;color:#11bb30;background:url(0_icon_all.png) no-repeat -585px -356px;padding-left:20px;height:24px;line-height:24px;}
+.msgbox .tips .red{padding:0 5px;}
+.btn-info {width: 90%;font-size: 20px;height: 36px;display: block;line-height: 34px;text-align: center;border-radius: 5px;}
+
+/*student_detailbox*/
+.student_detailbox                  {font-family:"\5B8B\4F53";border:1px solid #e3e4e8;}
+.student_detailbox .title           {color:#333;background:#f6f8fa;position:relative;border-bottom:1px solid #e3e4e8;padding:10px 10px 10px 20px;height:65px;color:#404040;}
+.student_detailbox .title .msg      {color:#a4aeb9;}
+
+.student_detailbox .title .tith     {color:#333;font-weight:bold;font-size:12px;float:left;}
+.student_detailbox .cont            {background:#FFF;}
+.student_detailbox .btbox .name     {font-size:18px;font-weight:bold;}
+
+.student_detailbox .title .submit_style1{position:absolute;top:20px;right:50px;}
+
+.student_detailbox .detail_info     {font-size:14px;padding:10px 20px 10px 20px;border-bottom:1px solid #e5e6ea;}
+.student_detailbox .detail_info li  {line-height:30px;}
+.student_detailbox .detail_info .bt{}
+.student_detailbox .detail_info .stitle {color:#11bb30;font-weight:bold;margin-bottom:5px;}
+.student_detailbox .detail_info .bt {width:80px;font-weight:normal;color:#a4aeb9;float:left;}
+.student_detailbox .detail_info .nr {width:315px;float:left;}
+
+.student_detailbox .sdbox           {background:#fefff0;padding:20px;font-size:14px;}
+
+/*box_ui_sy8*/
+.box_ui_sy8                         {font-family:"\5B8B\4F53";border:1px solid #e3e4e8;}
+.box_ui_sy8 .title                  {color:#333;background:#f6f8fa;padding-left:55px;height:60px;line-height:60px;position:relative;border-bottom:1px solid #e3e4e8;}
+
+.box_ui_sy8 .title .tith            {color:#333;font-weight:bold;font-size:14px;float:left;padding: 10px;}
+.box_ui_sy8 .title .icon            {width:72px;height:72px;background:url(0_icon_all.png) no-repeat 0 -280px;position:absolute;top:-5px;left:-5px;line-height:400px;overflow:hidden;}
+
+.box_ui_sy8 .cont                   {background:#FFF;}
+.box_ui_sy8 .cont2                  {background:#f7f7f7;}
+.box_ui_sy8 .pa15                   {padding:10px 10px 10px 15px;}
+
+.info .hotcity,.info .allcity {background: #FFF;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 8px 7px;margin: 2px;display: block;}
+.info .hotcity {height: 180px;}
+.info .hotcity ul li {float:left;width: 15%;display: inline-block;padding:10px 0;}

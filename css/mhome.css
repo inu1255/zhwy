@@ -1,0 +1,158 @@
+#page_1{
+    width: 100%;
+    height: 100%;
+    background-image: url("http://image2.youlin.cn/static_image/www/home_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#page_1 .y_logo{
+    position: absolute;
+    top: 60px;
+    left: 45px;
+}
+
+#page_1 .y_logo img{
+    width: 217px;
+    height: 123px;
+}
+
+#page_1 .y_btn{
+    position: absolute;
+    bottom: 60px;
+    left: 91px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    height: 52px;
+    width: 193px;
+}
+
+#page_1 .y_btn a p{
+    line-height: 52px;
+    text-align: center;
+    font-size:15px;
+}
+
+.page_2 .s_pic{
+    width: 100%;
+}
+
+.page_2 .s_pic img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.page_2 .s_content{
+    height: 106px;
+    margin-left: 19px;
+}
+
+.page_2 .s_content .title{
+    margin-top: 15px;
+    font-size: 23px;
+    color: #4a4a4a;
+}
+
+.page_2 .s_content .info{
+    margin-top: 15px;
+    font-size: 12px;
+    color: #6f6f6f;
+    margin-bottom: 19px;
+}
+
+.page_2 .download2{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 64px;
+    width: 100%;
+}
+
+.page_2 .download2 img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.page_2 .download3{
+    position: absolute;
+    right: 25px;
+    top:14.5px;
+}
+
+.page_2 .download3 a p{
+    color: #ffffff;
+    background-color: #cd6456;
+    width: 93px;
+    height: 35px;
+    line-height:35px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+#page_3{
+	width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#page_3 .l_pic{
+	width: 100%;
+}
+
+#page_3 .l_pic img{
+	width: 100%;
+	height:100%;
+}
+
+#page_3 .l_background{
+	width: 100%;
+	height:100%;
+	background-color:#000000;
+	opacity:0.8;
+	position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#page_3 .l_text{
+	position: absolute;
+    bottom: 40px;
+    left: 0px;
+    color:#ffffff;
+    width:100%;
+}
+
+#page_3 .l_text .l_text_content{
+	text-align:center;
+	font-size:15px;
+	line-height:25px;
+}
+
+#page_3 .l_text .l_text_action a p{
+	width:193px;
+	margin:50px auto 0;
+	text-align:center;
+	color:#ffffff;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+	height:52px;
+	line-height:52px;
+	font-size:15px;
+}
+
+.swipe_tip{
+	width:40px;
+	height:15px;
+	z-index:5000;
+	margin:0 0 0 -20px;
+	position:absolute;
+	left:50%;
+	bottom:20px;
+	background:url(../../images/tip_bg.png) no-repeat;
+	-webkit-background-size:40px 15px;
+	-moz-background-size:40px 15px;
+	-o-background-size:40px 15px;
+	background-size:40px 15px;
+}
+

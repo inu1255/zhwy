@@ -1,0 +1,89 @@
+<div style="max-width: 1024px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation" class="active"><a href="#/main">服务管理</a></li>
+		<li role="presentation"><a href="#/order">订单管理</a></li>
+		<li role="presentation"><a href="#/company">公司管理</a></li>
+		<li role="presentation"><a href="#/user">用户管理</a></li>
+		<li role="presentation"><a href="#/manager">经理凭证</a></li>
+	</ul>
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>图片</th>
+			<th>名称</th>
+			<th>介绍</th>
+			<th>价格</th>
+			<th>公司积分</th>
+			<th>经理积分</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="s in data">
+			<td>
+				<div>{{$index+1}}</div>
+			</td>
+			<td><img ng-click="changeimg($event,s)" ng-src="{{s.img?s.img:'../img/codebar.png'}}" err-src="../img/codebar.png" style="width: 90px;height: 67px;" />
+				<input ng-onchange="uploadimg($event,s)" type="file" accept="image/*" style="display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.name}}</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.name" type="text" style="display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.description}}</div>
+				<textarea ng-blur="save($event,s)" ng-model="$parent.v.description" class="form-control" style="display: none;"></textarea>
+			</td>
+			<td>
+				<div ng-click="edit($event,s)" style="float: left;">{{s.price}}￥</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.price" type="text" style="width: 60px;display: none;float: left;">
+				<div ng-click="edit($event,s)">/{{s.unit}}</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.unit" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.cscore}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.cscore" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.uscore}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.uscore" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>
+				<button ng-click="updatestatus($event,s)" ng-class="{'btn-warning':0==s.status,'btn-success':0!=s.status}" class="btn">{{s.status!=0?'上线中':'已下线'}}</button>
+			</td>
+			<td>
+				<button ng-click="del($event,s)" class="btn btn-danger">删除</button>
+			</td>
+		</tr>
+		<tr>
+			<td>添加</td>
+			<td>
+				<img ng-click="changeimg($event,s)" ng-src="{{s.img?s.img:'../img/codebar.png'}}" err-src="../img/codebar.png" style="width: 90px;height: 67px;" />
+				<input ng-onchange="setimg($event,'img')" type="file" accept="image/*" style="display: none;">
+			</td>
+			<td>
+				<input ng-model="s.name" type="text">
+			</td>
+			<td>
+				<textarea ng-model="s.description" class="form-control"></textarea>
+			</td>
+			<td>
+				<div class="input-group" style="width: 80px;">
+					<input ng-model="s.price" type="text" class="form-control">
+					<span class="input-group-addon" style="padding: 6px 3px;">￥</span>
+				</div>
+			</td>
+			<td>
+				<input ng-model="s.cscore" type="text" style="width: 60px;">
+			</td>
+			<td>
+				<input ng-model="s.uscore" type="text" style="width: 60px;">
+			</td>
+			<td>
+				<button ng-click="s.status=s.status!=0?0:1" ng-class="{'btn-warning':0==s.status,'btn-success':0!=s.status}" class="btn">{{s.status!=0?'上线中':'已下线'}}</button>
+			</td>
+			<td>
+				<button ng-disabled="checkadd()" ng-click="insert($event)" class="btn btn-primary">保存</button>
+			</td>
+		</tr>
+	</table>
+</div>

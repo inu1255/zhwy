@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="../css/mui.min.css">
+<link rel="stylesheet" href="../css/yasha.css">
+<script src="../js/angular/angular.min.js"></script>
+<script src="../js/angular/angular-route.min.js"></script>
+<style>
+	
+</style>
+<body ng-app="Main" ng-controller="index">
+	<div ng-view></div>
+</body>
+<script src="../js/mui.js"></script>
+<script src="../js/yasha.js"></script>
+<script src="../js/controller.js"></script>
+<script>
+module.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+        when('/main', {
+            templateUrl: 'views/main.html',
+            controller: 'main'
+        }).
+        when('/service/:id', {
+            templateUrl: 'views/service.html',
+            controller: 'service'
+        }).
+        when('/order', {
+            templateUrl: 'views/order.html',
+            controller: 'order'
+        }).
+        when('/rank', {
+            templateUrl: 'views/rank.html',
+            controller: 'rank'
+        }).
+        otherwise({
+            redirectTo: '/rank'
+        });
+    }
+])
+</script>

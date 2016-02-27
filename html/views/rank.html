@@ -1,0 +1,15 @@
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<div i-row-bottoms="贡献榜 公司榜 个人榜" model="st" style="margin: 20px 0;"></div>
+		<div ng-if="st==0" align="center">【{{user.company}}】贡献榜</div>
+		<div ng-if="!data[st].length" class="center-text">没有数据</div>
+		<table class="table">
+			<tr ng-repeat="s in data[st]|filter:filter|orderBy:'-score'" ng-class="{'rank-me':s.id==$parent.user.id||s.cid==$parent.user.cid}">
+				<td>{{$index+1}}</td>
+				<td><img ng-if="s.headimgurl" ng-src="{{s.headimgurl}}" class="rank-image" /></td>
+				<td>{{s.name}}</td>
+				<td>{{s.score}}分</td>
+			</tr>
+		</table>
+	</div>
+</div>

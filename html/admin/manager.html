@@ -1,0 +1,57 @@
+<div style="max-width: 1024px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation"><a href="#/main">服务管理</a></li>
+		<li role="presentation"><a href="#/order">订单管理</a></li>
+		<li role="presentation"><a href="#/company">公司管理</a></li>
+		<li role="presentation"><a href="#/user">用户管理</a></li>
+		<li role="presentation" class="active"><a href="#/manager">经理凭证</a></li>
+	</ul>
+	<table class="table table-bordered">
+		<tr>
+			<th style="width: 35px;">#</th>
+			<th style="width: 100px;">公司</th>
+			<th style="width: 150px;">验证码</th>
+			<th style="width: 70px;">状态</th>
+			<th style="width: 70px;">操作</th>
+		</tr>
+		<tr ng-repeat="s in data|orderBy:'cid'">
+			<td>
+				<div>{{$index+1}}</div>
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{getCompanyById(s.cid).name}}</div>
+				<select ng-blur="save($event,s)" ng-onchange="save($event,s)" ng-model="$parent.v.cid" ng-options="c.id as c.name for c in $parent.company" style="display: none;">
+				</select>
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.token}}</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.token" type="text" style="width: 280px;display: none;">
+			</td>
+			<td ng-class="{'text-primary':s.uid>0,'text-muted':s.uid<=0}">
+				<div>{{U(s.uid).name||U(s.uid).nickname}}</div>
+			</td>
+			<td>
+				<button ng-click="del($event,s)" class="btn btn-danger">删除</button>
+			</td>
+		</tr>
+		<tr>
+			<td>添加</td>
+			<td>
+				<select ng-model="s.cid" ng-options="c.id as c.name for c in company">
+				</select>
+			</td>
+			<td>
+				<input ng-model="s.token" type="text" style="width: 280px;">
+			</td>
+			<td>
+				<div class="input-group" style="width: 80px;">
+					<span class="input-group-addon" style="padding: 6px 3px;">数量</span>
+					<input ng-model="count" ng-init="count=1" type="text" class="form-control">
+				</div>
+			</td>
+			<td>
+				<button ng-disabled="checkadd()" ng-click="insert($event)" class="btn btn-primary">保存</button>
+			</td>
+		</tr>
+	</table>
+</div>

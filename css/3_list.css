@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+#jiajiao_nav			{border-bottom:8px solid #1ebf3b;height:38px;}
+/*teacher_listbox*/
+
+.teacher_listbox ul			{}
+
+.teacher_listbox li			{border-bottom:1px solid #e3e4e8;padding:15px 0;color:#404040;}
+.teacher_listbox li dt		{width:102px;height:200px;margin-right:28px;float:left;}
+.teacher_listbox li .img	{width:102px;height:102px;position:relative;}
+.teacher_listbox li .img .img-h{width:102px;height:102px; text-align:center;}
+.teacher_listbox li .img .img-h img{}
+.teacher_listbox li .img .design{background:url(1_design.png) no-repeat;width:102px;height:102px;position:absolute;top:0;right:0;}
+/*.teacher_listbox li dd		{float:left;}*/
+.teacher_listbox li .titlebox .name{font-size:14px;font-weight:bold;color:#390;}
+.teacher_listbox li .time	{color:#a4aeb9;}
+.teacher_listbox li .ug		{font-size:14px;color:#404040;margin-bottom:15px;}
+.teacher_listbox li .lc		{font-size:14px;line-height:28px;}
+.teacher_listbox li .lc	.bt	{color:#a4aeb9;font-weight:normal;display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:middle;line-height:26px;height:26px;}
+.teacher_listbox li .lc .gray9{color:#a4aeb9;}
+.teacher_listbox li .butbox	{text-align:right;padding-right:10px;padding-top:10px;}
+.teacher_listbox li .lc .num{color:#e84600;font-weight:bold;display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:middle;}
+.teacher_listbox li:hover,
+.teacher_listbox li.hover{background:#fffef8;}
+.teacher_listbox li:hover .img .design,
+.teacher_listbox li.hover .img .design{background:url(2_design_bg.png) no-repeat;}
+
+.teacher_listbox li .i_orange,
+.teacher_listbox li .i_blue,
+.teacher_listbox li .i_green{margin-top:-3px;}
+
+.teacher_listbox li.hover .i_orange,
+.teacher_listbox li.hover .i_orange span,
+.teacher_listbox li.hover .i_blue,
+.teacher_listbox li.hover .i_blue span,
+.teacher_listbox li.hover .i_green,
+.teacher_listbox li.hover .i_green span{background:#fffef8 url(3_icon_all.png) no-repeat;color:#FFF;}
+
+.teacher_listbox li.hover .i_orange		{background-position:-400px -720px;padding-left:6px;}
+.teacher_listbox li.hover .i_orange span{background-position:right -720px;padding-right:6px;}
+
+.teacher_listbox li.hover .i_blue		{background-position:-400px -680px;padding-left:6px;}
+.teacher_listbox li.hover .i_blue span	{background-position:right -680px;padding-right:6px;}
+
+.teacher_listbox li.hover .i_green		{background-position:-400px -640px;padding-left:6px;}
+.teacher_listbox li.hover .i_green span	{background-position:right -640px;padding-right:6px;}
+
+/*teacher_listbox2*/
+.teacher_listbox2 .uidiv    {padding:13px 15px;border-bottom:1px solid #e3e4e8;color:#404040;font-size:14px;}
+.teacher_listbox2 .titlebox .name{font-size:14px;font-weight:bold;color:#390;}
+.teacher_listbox2 .butbox   {text-align:right;padding-top:10px;}
+.teacher_listbox2 .bt       {color:#a4aeb9;font-weight:normal;display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:top;line-height:26px;height:26px;}
+.teacher_listbox2 .mc,
+.teacher_listbox2 .uidiv:hover,
+.teacher_listbox2 .uidiv.hover{background:#fffef8;}
+
+
+.teacher_listbox2 .uidiv.frist{background:#f7faf6;border:1px solid #cdd3ca;padding:13px 14px;position:relative;}
+.teacher_listbox2 .uidiv.frist .i_top{position:absolute;top:0;left:15px;_left:0;}
+.teacher_listbox2 .uidiv.frist .titlebox {padding-left:40px;}
+
+.nav-bar .nav {
+    display: -webkit-box;
+    background: -webkit-linear-gradient(top,#F7F7F7,#F4F4F3);
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 33px;
+    -webkit-user-select: none
+}
+
+.dropdown {
+    -webkit-box-flex: 1;
+    border-left: 1px solid #CCC;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown.active {
+    background: -webkit-linear-gradient(top,#F4F4F3,#F7F7F7);
+    margin: 0
+}
+.dropdown a {padding: 8px 0;}
+.dropdown.category {
+    border: 0
+}
+
+.dropdown span {
+    display: inline-block;
+    padding-left: 20px;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 60%
+}
+.dropdown-menu { width: 300%}
+
+.dropdown-list {
+    width: 100%;
+    background: #F7F7F7;
+}
+
+.dropdown-list>li {
+    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #FCFCFC;
+    line-height: 39px;
+    border-left: 3px solid #F7F7F7;
+    position: relative;
+    text-shadow: 0 1px 1px #FFF
+}
+.dropdown-list>li>a{display: block;}

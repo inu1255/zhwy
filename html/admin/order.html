@@ -1,0 +1,68 @@
+<div style="max-width: 1024px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation"><a href="#/main">服务管理</a></li>
+		<li role="presentation" class="active"><a href="#/order">订单管理</a></li>
+		<li role="presentation"><a href="#/company">公司管理</a></li>
+		<li role="presentation"><a href="#/user">用户管理</a></li>
+		<li role="presentation"><a href="#/manager">经理凭证</a></li>
+	</ul>
+	<div class="option-box">
+		<label>等待接单<input type="checkbox" ng-model="St[1]" ng-checked="St[1]" /></label>
+		<label>已接单<input type="checkbox" ng-model="St[2]" ng-checked="St[2]" /></label>
+		<label>等待付款<input type="checkbox" ng-model="St[3]" ng-checked="St[3]" /></label>
+		<label>已经结算<input type="checkbox" ng-model="St[0]" ng-checked="St[0]" /></label>
+		<label>订单取消<input type="checkbox" ng-model="St[4]" ng-checked="St[4]" /></label>
+	</div>
+	<table class="table table-bordered">
+		<tr>
+			<th style="width: 35px;">#</th>
+			<th style="width: 70px;">姓名</th>
+			<th style="width: 70px;">服务</th>
+			<th style="width: 70px;">总价格</th>
+			<th style="width: 70px;">数量</th>
+			<th style="width: 70px;">电话</th>
+			<th style="width: 100px;">备注</th>
+			<th class="editable" style="width: 70px;">公司</th>
+			<th class="editable" style="width: 70px;">个人</th>
+			<th ng-click="order=!order" style="width: 70px;">时间({{order?'升序':'降序'}})</th>
+			<th class="editable" style="width: 70px;">状态</th>
+		</tr>
+		<tr ng-repeat="s in data|filter:checkSt|orderBy:order?'time':'-time'">
+			<td>
+				<div>{{$index+1}}</div>
+			</td>
+			<td>
+				<div>{{s.name}}</div>
+			</td>
+			<td>
+				<div>{{S(s.sid).name}}</div>
+			</td>
+			<td>
+				<div>{{S(s.sid).price*s.num}}￥</div>
+			</td>
+			<td>
+				<div>{{s.num+S(s.sid).unit}}</div>
+			</td>
+			<td>{{s.telphone}}</td>
+			<td><pre>{{s.remark}}</pre></td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.cscore}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.cscore" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>
+				<div ng-click="edit($event,s)">{{s.uscore}}分</div>
+				<input ng-blur="save($event,s)" ng-model="$parent.v.uscore" type="text" style="width: 60px;display: none;">
+			</td>
+			<td>{{s.time}}</td>
+			<td>
+				<select ng-change="change(s)" ng-model="s.st">
+					<option value="1">等待接单</option>
+					<option value="2">已接单</option>
+					<option value="3">等待付款</option>
+					<option value="4">订单取消</option>
+					<option value="0">结束</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</div>

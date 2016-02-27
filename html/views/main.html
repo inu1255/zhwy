@@ -1,0 +1,17 @@
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<ul class="mui-table-view">
+			<li ng-tap="to('service/'+s.id)" ng-repeat="s in data|filter:filter" class="mui-table-view-cell">
+				<img ng-src="{{s.img?s.img:'../img/codebar.png'}}" class="main-img" />
+				<div class="main-info">
+					<div>{{s.name}}</div>
+					<h5 class="mui-ellipsis">{{s.description}}</h5>
+					<div class="main-price">{{s.price}}{{s.type==2?"积分":"元"}}/{{s.unit}}{{s.type==3?"(100积分抵1元)":""}}
+						<div style="float: right;color: #ccc;font-size: 12px;margin-right: 5px;">公:{{s.cscore}}分</div>
+						<div ng-show="$parent.user.type>0" style="float: right;color: #ccc;font-size: 12px;">私:{{s.cscore}}分</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
